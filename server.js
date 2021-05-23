@@ -124,3 +124,4 @@ function Jobs(element){
     this.url=element.url
     this.description = element.description;
 }
+// this was fun
