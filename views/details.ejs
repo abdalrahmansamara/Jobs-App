@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h1>Details</h1>
+    <div>
+        <a href="/">home</a>
+        <a href="/search">search</a>
+        <a href="/myList">My List</a>
+
+    </div>
+    <div class="jj">
+        <h2><%=job.title%></h2>
+        <h3><%=job.company%></h3>
+        <h4><%=job.location%></h4>
+        <a href="<%=job.url%>"><%=job.url%></a>
+        <p><%=job.description%></p>
+        </div>
+        <form action="/delete/<%=job.id%>?_method=delete" method="POST">
+        <button>Delete</button>
+        </form>
+        <button class="UpdateForm">Update</button>
+        <div class="shows">
+            <form action="/update/<%=job.id%>?_method=put" method="POST">
+            <input type="text" name="title" value="<%=job.title%>">
+            <input type="text" name="company" value="<%=job.company%>">
+            <input type="text" name="location" value="<%=job.location%>">
+            <input type="text" name="url" value="<%=job.url%>">
+            <input type="text" name="description" value="<%=job.description%>">
+            <button>Submit</button>
+        </form>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="../js/app.js"></script>
+</body>
+</html>
