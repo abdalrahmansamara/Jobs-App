@@ -7,8 +7,8 @@ const pg = require('pg')
 const superagent = require('superagent');
 const methodOverride = require('method-override');
 
-const client = new pg.Client(process.env.DATABASE_URL)
-// const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+// const client = new pg.Client(process.env.DATABASE_URL)
+const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
 server.set('view engine','ejs')
 server.use(methodOverride('_method'))
